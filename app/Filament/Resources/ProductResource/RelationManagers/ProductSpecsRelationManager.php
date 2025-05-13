@@ -76,9 +76,6 @@ class ProductSpecsRelationManager extends RelationManager
                 Tables\Columns\IconColumn::make('is_active')
                     ->label('啟用狀態')
                     ->boolean(),
-                Tables\Columns\TextColumn::make('created_at')
-                    ->label('建立時間')
-                    ->dateTime('Y-m-d H:i'),
             ])
             ->defaultSort('sort', 'asc')
             ->reorderable('sort')
