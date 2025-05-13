@@ -11,6 +11,7 @@ class ProductSpec extends Model
         'product_id',
         'name',
         'price',
+        'special_price',
         'stock',
         'is_active',
         'sort',
