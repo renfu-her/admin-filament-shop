@@ -61,11 +61,13 @@ class ProductSpecsRelationManager extends RelationManager
                     ->sortable(),
                 Tables\Columns\TextColumn::make('price')
                     ->label('價格')
-                    ->money('TWD')
+                    ->formatStateUsing(fn($state) => $state ? number_format($state, 0) : null)
+                    ->prefix('NT ')
                     ->sortable(),
                 Tables\Columns\TextColumn::make('special_price')
                     ->label('優惠價')
-                    ->money('TWD')
+                    ->formatStateUsing(fn($state) => $state ? number_format($state, 0) : null)
+                    ->prefix('NT ')
                     ->sortable(),
                 Tables\Columns\TextColumn::make('stock')
                     ->label('庫存')
