@@ -29,6 +29,11 @@ class ProductSpecsRelationManager extends RelationManager
                     ->required()
                     ->numeric()
                     ->prefix('NT$'),
+                Forms\Components\TextInput::make('special_price')
+                    ->label('優惠價')
+                    ->numeric()
+                    ->prefix('NT$')
+                    ->nullable(),
                 Forms\Components\TextInput::make('stock')
                     ->label('庫存')
                     ->required()
@@ -56,6 +61,10 @@ class ProductSpecsRelationManager extends RelationManager
                     ->sortable(),
                 Tables\Columns\TextColumn::make('price')
                     ->label('價格')
+                    ->money('TWD')
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('special_price')
+                    ->label('優惠價')
                     ->money('TWD')
                     ->sortable(),
                 Tables\Columns\TextColumn::make('stock')
